@@ -31,8 +31,8 @@ func loggingHandler(h http.Handler) http.Handler {
 			fi, err := file.Stat()
 			if err == nil {
 				log.WithFields(logrus.Fields{
-					filename: file.Name(),
-					filesize: fi.Size(),
+					"filename": file.Name(),
+					"filesize": fi.Size(),
 				}).Debug("file served")
 			}
 		}
